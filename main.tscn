@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdxidng3i8gab"]
+
+[ext_resource type="Script" uid="uid://dtgki8tfxk5hl" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://xrngm5dqbjuu" path="res://mob.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dcvmltuy77nx1" path="res://player.tscn" id="3_h2yge"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_h2yge")
+mob_scene = ExtResource("2_1bvp3")
+
+[node name="Player" parent="." instance=ExtResource("3_h2yge")]
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Mob" parent="." instance=ExtResource("2_1bvp3")]
+
+[node name="SpawnPosition" type="Marker2D" parent="Mob"]
+position = Vector2(100, 100)
+
+[node name="Mob2" parent="." instance=ExtResource("2_1bvp3")]
+
+[node name="SpawnPosition" type="Marker2D" parent="Mob2"]
+position = Vector2(500, 200)
+
+[node name="Mob3" parent="." instance=ExtResource("2_1bvp3")]
+
+[node name="SpawnPosition" type="Marker2D" parent="Mob3"]
+position = Vector2(800, 500)
+
+[connection signal="hit" from="Player" to="Mob" method="_on_player_hit"]
+[connection signal="hit" from="Player" to="Mob2" method="_on_player_hit"]
+[connection signal="hit" from="Player" to="Mob3" method="_on_player_hit"]
