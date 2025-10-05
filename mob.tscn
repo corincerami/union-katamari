@@ -31,3 +31,5 @@ animation = &"walk"
 shape = SubResource("CapsuleShape2D_ubaqv")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="SpawnPosition" type="Marker2D" parent="."]

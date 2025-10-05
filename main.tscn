@@ -14,22 +14,3 @@ mob_scene = ExtResource("2_1bvp3")
 position = Vector2(240, 450)
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="Mob" parent="." instance=ExtResource("2_1bvp3")]
-
-[node name="SpawnPosition" type="Marker2D" parent="Mob"]
-position = Vector2(100, 100)
-
-[node name="Mob2" parent="." instance=ExtResource("2_1bvp3")]
-
-[node name="SpawnPosition" type="Marker2D" parent="Mob2"]
-position = Vector2(500, 200)
-
-[node name="Mob3" parent="." instance=ExtResource("2_1bvp3")]
-
-[node name="SpawnPosition" type="Marker2D" parent="Mob3"]
-position = Vector2(800, 500)
-
-[connection signal="hit" from="Player" to="Mob" method="_on_player_hit"]
-[connection signal="hit" from="Player" to="Mob2" method="_on_player_hit"]
-[connection signal="hit" from="Player" to="Mob3" method="_on_player_hit"]
