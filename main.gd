@@ -4,18 +4,18 @@ extends Node
 var score
 
 var mobs = [
-	{"spawn": [100, 100]},
-	{"spawn": [300, 500]},
-	{"spawn": [400, 200]},
-	{"spawn": [400, 100]},
-	{"spawn": [400, 500]},
-	{"spawn": [300, 200]},
-	{"spawn": [300, 100]},
-	{"spawn": [100, 500]},
-	{"spawn": [4500, 200]},
-	{"spawn": [100, 350]},
-	{"spawn": [300, 350]},
-	{"spawn": [200, 350]},
+	{"spawn": [100, 100], "personality": 1},
+	{"spawn": [300, 500], "personality": 1},
+	{"spawn": [400, 200], "personality": 1},
+	{"spawn": [400, 100], "personality": 2},
+	{"spawn": [400, 500], "personality": 2},
+	{"spawn": [300, 200], "personality": 2},
+	{"spawn": [300, 100], "personality": 2},
+	{"spawn": [100, 500], "personality": 2},
+	{"spawn": [4500, 200], "personality": 0},
+	{"spawn": [100, 350], "personality": 0},
+	{"spawn": [300, 350], "personality": 0},
+	{"spawn": [200, 350], "personality": 0},
 ]
 
 func _ready():
@@ -30,6 +30,7 @@ func new_game():
 		var unique_mob = mob.duplicate();
 		
 		unique_mob.position = Vector2(mob_data.spawn[0], mob_data.spawn[1]);
+		unique_mob.personality = mob_data.personality;
 		unique_mob.clump_index = clump_index;
 		clump_index += 1;
 		# Spawn the mob by adding it to the Main scene.
