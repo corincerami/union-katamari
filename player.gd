@@ -1,6 +1,9 @@
 extends Area2D
 
+class_name Player;
+
 @export var speed = 400
+@export var clump: Array;
 var screen_size
 
 func _ready():
@@ -27,7 +30,8 @@ func _process(delta):
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.clumped = true;
+	if body is Mob:
+		body.join_clump(clump.size() + 1);
 	
 func start(pos):
 	position = pos
