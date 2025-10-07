@@ -1,3 +1,10 @@
+To Do
+- Make level art
+- Make character art
+- Generate level data
+- Track score/ranking
+- Build UI and menus
+
 Feature Ideas
 - Obstacles/Enemies - they can knock you around or remove workers from your union
   - Union-busting lawyers
