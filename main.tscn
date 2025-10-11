@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdxidng3i8gab"]
+[gd_scene load_steps=6 format=3 uid="uid://cdxidng3i8gab"]
 
 [ext_resource type="Script" uid="uid://dtgki8tfxk5hl" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://xrngm5dqbjuu" path="res://mob.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dcvmltuy77nx1" path="res://player.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dbwna85265c8h" path="res://union-katamari-office-dev-art.png" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://cluh3d8ogvfe1" path="res://on strike green.png" id="5_lquwl"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
@@ -11,6 +13,43 @@ mob_scene = ExtResource("2_1bvp3")
 [node name="Player" parent="." instance=ExtResource("3_h2yge")]
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(240, 450)
+position = Vector2(0, 310)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -576.0
+offset_top = -323.0
+offset_right = 5173.9995
+offset_bottom = 2906.9998
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-577.25, 4)
+scale = Vector2(0.0028645897, 0.59444445)
+texture = ExtResource("5_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0.5, 327.5)
+scale = Vector2(0.6036458, 0.004629656)
+texture = ExtResource("5_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2"]
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(4.3750153, -326.49997)
+scale = Vector2(0.6048177, 0.006481505)
+texture = ExtResource("5_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3"]
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(578.75, 1)
+scale = Vector2(0.0054687764, 0.59444445)
+texture = ExtResource("5_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4"]
