@@ -47,26 +47,12 @@ func _physics_process(delta):
 
 func _get_clump_offset():
 #	This will position mobs in 8 points around the player
-	var mod = clump_index % 8;
-	if mod == 1:
-		clump_offset = [20, 0];
-	if mod == 2:
-		clump_offset = [15, 15];
-	if mod == 3:
-		clump_offset = [0, 20];
-	if mod == 4:
-		clump_offset = [-15, 15];
-	if mod == 5:
-		clump_offset = [-20, 0];
-	if mod == 6:
-		clump_offset = [-15, -15];
-	if mod == 7:
-		clump_offset = [0, -20];
-	if mod == 0:
-		clump_offset = [15, -15];
-	
-#	This will make the first 8 mobs in an inner ring, the second 8 a little further out, and so on
-	var ring = floor(clump_index / 8.0) + 1;
-	if ring > 1:
-		clump_offset = [clump_offset[0] * ring, clump_offset[1] * ring];
+	var ring = clump_index / 6 + 1;
+	print_debug(ring);
+	var members_in_ring = ring * 6;
+	var position_in_ring = clump_index - members_in_ring;
+	var degrees_offset = position_in_ring / float(members_in_ring) * 360;
+	var offset = Vector2(0, -1).rotated(degrees_offset);
+	clump_offset = [offset.x, offset.y]
+	clump_offset = [clump_offset[0] * (ring + 30), clump_offset[1] * (ring + 30)];
 	return clump_offset;
