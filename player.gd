@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	if last_collision:
 		var body = last_collision.get_collider()
 		if body is Mob:
-			body.join_clump(clump.size() + 1)
+			body.join_clump(clump.size())
 	
 	var new_rotation = global_position.angle_to_point(global_position + velocity)
 	if new_rotation != $GuyAnchor.rotation:
