@@ -26,12 +26,12 @@ func join_clump(index):
 func _ready():
 	player = get_parent().get_node("Player");
 	var personality_random = rng.randf_range(0.0, 1.0)
-	#if personality_random < 0.15:
-		#personality = Personalities.Negative;
-	#elif personality_random < 0.3:
-		#personality = Personalities.Positive;
-	#else:
-	personality = Personalities.Neutral;
+	if personality_random < 0.15:
+		personality = Personalities.Negative;
+	elif personality_random < 0.3:
+		personality = Personalities.Positive;
+	else:
+		personality = Personalities.Neutral;
 	$CollisionShape2D.disabled = false
 	
 func _physics_process(delta):
