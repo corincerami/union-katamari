@@ -24,7 +24,7 @@ func join_clump(index):
 		$CollisionShape2D.set_deferred('disabled', true);
 
 func _ready():
-	player = get_parent().get_node("Player");
+	player = get_parent().get_parent().get_node("Player");
 	var personality_random = rng.randf_range(0.0, 1.0)
 	if personality_random < 0.15:
 		personality = Personalities.Negative;

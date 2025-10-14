@@ -1,65 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmuekcsmp8hie"]
 
-[ext_resource type="PackedScene" uid="uid://xrngm5dqbjuu" path="res://mob.tscn" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://7ky6mcxj2f6l" path="res://level_1.gd" id="1_3hls8"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_3hls8")
 
-[node name="Mob" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(335, 93)
-
-[node name="Mob2" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(335, 31)
-
-[node name="Mob3" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(315, 31)
-
-[node name="Mob4" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(295, 29)
-
-[node name="Mob5" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(277, 29)
-
-[node name="Mob6" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(260, 30)
-
-[node name="Mob7" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(569, 294)
-
-[node name="Mob8" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(606, 256)
-
-[node name="Mob9" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(551, 236)
-
-[node name="Mob10" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(587, 206)
-
-[node name="Mob11" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(209, 456)
-
-[node name="Mob12" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(262, 452)
-
-[node name="Mob13" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(239, 428)
-
-[node name="Mob14" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(200, 414)
-
-[node name="Mob15" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(245, 388)
-
-[node name="Mob16" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(285, 411)
-
-[node name="Mob17" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(261, 93)
-
-[node name="Mob18" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(280, 93)
-
-[node name="Mob19" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(300, 93)
-
-[node name="Mob20" parent="." instance=ExtResource("1_3hls8")]
-position = Vector2(317, 94)
+[node name="Timer" type="Timer" parent="."]
