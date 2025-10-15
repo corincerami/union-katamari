@@ -5,6 +5,7 @@ class_name Player;
 @export var speed = 400
 @export var clump: Array;
 var screen_size
+var mob_sprite;
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO # The player's movement vector.
@@ -40,7 +41,16 @@ func _physics_process(delta: float) -> void:
 	if last_collision:
 		var body = last_collision.get_collider()
 		if body is Mob:
-			body.join_clump(clump.size())
+			body.join_clump(clump.size())	
+			var image = Image.load_from_file("res://256x256.png")
+			var texture = ImageTexture.create_from_image(image)
+			mob_sprite = Sprite2D.new()
+			mob_sprite.z_index = 10;
+			mob_sprite.scale = mob_sprite.scale * 2;
+			mob_sprite.texture = texture
+			mob_sprite.offset = body.clump_offset;
+			mob_sprite.rotation = randf();
+			$Sprite2D.add_child(mob_sprite);
 	
 	var new_rotation = global_position.angle_to_point(global_position + velocity)
 	if new_rotation != $GuyAnchor.rotation:

@@ -3,7 +3,7 @@ extends CharacterBody2D;
 class_name Mob;
 
 var player: Player;
-var clump_offset: Array;
+var clump_offset: Vector2;
 @export var clump_index = -1;
 @export var speed = 7_000;
 var personality: int;
@@ -22,6 +22,7 @@ func join_clump(index):
 		clump_index = index;
 		clump_offset = _get_clump_offset();
 		$CollisionShape2D.set_deferred('disabled', true);
+		hide()
 
 func _ready():
 	player = get_parent().get_parent().get_node("Player");
@@ -35,15 +36,12 @@ func _ready():
 	$CollisionShape2D.disabled = false
 	
 func _physics_process(delta):
-	if clump_index >= 0:
-		position = Vector2(player.position.x + clump_offset[0], player.position.y + clump_offset[1]);
-	else:
-		var dist = position.distance_to(player.position);
-		if dist < 100 && personality != Personalities.Neutral:
-			velocity = position.direction_to(player.position) * speed * delta;
-			if personality == Personalities.Negative:
-				velocity *= -1;
-			move_and_slide();
+	var dist = position.distance_to(player.position);
+	if dist < 100 && personality != Personalities.Neutral:
+		velocity = position.direction_to(player.position) * speed * delta;
+		if personality == Personalities.Negative:
+			velocity *= -1;
+		move_and_slide();
 
 func _get_clump_offset():
 	var ring = rings.find_custom(func(r): return clump_index < r)
@@ -52,8 +50,7 @@ func _get_clump_offset():
 	if ring > 0:
 		capacity_of_prev_rings = rings[ring - 1];
 	var position_in_ring = clump_index - capacity_of_prev_rings;
-	var radians_offset = (position_in_ring + 1) / float(ring_capacity) * 6.2831853;
+	var radians_offset = (position_in_ring + 1) / float(ring_capacity) * 6.2831853; # multiplier for percentage around a circle to radians
 	var offset = Vector2(0, -1).rotated(radians_offset);
-	clump_offset = [offset.x, offset.y]
-	clump_offset = [clump_offset[0] * (ring * 10 + 30), clump_offset[1] * (ring * 10 + 30)];
-	return clump_offset;
+	offset = Vector2(offset.x * (ring * 200 + 30), offset.y * (ring * 200 + 30));
+	return offset;

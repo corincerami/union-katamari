@@ -46,3 +46,5 @@ texture = ExtResource("4_1bvp3")
 position = Vector2(0, 310)
 
 [node name="LevelTimer" type="Timer" parent="Level2"]
+
+[node name="StartScreen" type="Node2D" parent="."]
