@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	if last_collision:
 		var body = last_collision.get_collider()
 		if body is Mob:
-			body.join_clump(clump.size())	
+			body.join_clump(clump.size())
 			var image = Image.load_from_file("res://256x256.png")
 			var texture = ImageTexture.create_from_image(image)
 			mob_sprite = Sprite2D.new()
@@ -51,7 +51,14 @@ func _physics_process(delta: float) -> void:
 			mob_sprite.offset = body.clump_offset;
 			mob_sprite.rotation = randf();
 			$Sprite2D.add_child(mob_sprite);
-	
+		elif body is UnionBuster:
+			body.collide_with_player();
+			var last = clump.size() - 1;
+			if last >= 0:
+				var guy = clump[last];
+				$Sprite2D.get_child(last).queue_free();
+				guy.leave_clump()
+			
 	var new_rotation = global_position.angle_to_point(global_position + velocity)
 	if new_rotation != $GuyAnchor.rotation:
 		var tween = create_tween()

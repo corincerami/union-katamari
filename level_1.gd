@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var mob_scene: PackedScene
+@export var union_buster_scene: PackedScene
 
 var start_position = Vector2(0, 300);
 var level_index = 1;
@@ -104,6 +105,10 @@ var mobs = [
 {"spawn": [406, -243]}
 ]
 
+var union_busters = [
+	{"spawn": [0, 0]}
+]
+
 var level_time = 30;
 var player;
 
@@ -122,11 +127,16 @@ func start_level():
 		unique_mob.position = Vector2(mob_data.spawn[0], mob_data.spawn[1]);
 		# Spawn the mob by adding it to the Main scene.
 		add_child(unique_mob)
+	var union_buster = union_buster_scene.instantiate();
+	for ub_data in union_busters:
+		var unique_ub = union_buster.duplicate();
+		unique_ub.origin = Vector2(ub_data.spawn[0], ub_data.spawn[1]);
+		add_child(unique_ub);
 	$LevelTimer.start();
 
 func game_over():
 	for child in get_children():
-		if child is Mob:
+		if child is Mob || child is UnionBuster:
 			child.queue_free();
 	start_level();
 

@@ -23,6 +23,15 @@ func join_clump(index):
 		clump_offset = _get_clump_offset();
 		$CollisionShape2D.set_deferred('disabled', true);
 		hide()
+		
+func leave_clump():
+	player.clump.remove_at(clump_index);
+	var angle = rng.randf_range(0.0, 6.2831853); # pick a rangle angle in radians
+	var offset = Vector2(0, 100).rotated(angle);
+	position = player.position + offset;
+	personality = Personalities.Neutral;
+	$CollisionShape2D.disabled = false;
+	show()
 
 func _ready():
 	player = get_parent().get_parent().get_node("Player");

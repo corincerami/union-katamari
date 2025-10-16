@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b15lmrhiafsng"]
+
+[ext_resource type="Script" uid="uid://dt0op3fk0dj3c" path="res://union_buster.gd" id="1_3ackl"]
+[ext_resource type="Texture2D" uid="uid://q5d38gt08ad5" path="res://Logo.png" id="1_nxkpj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ackl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nxkpj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xju8"]
+radius = 215.0
+height = 442.0
+
+[node name="UnionBuster" type="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_3ackl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3ackl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 11)
+shape = SubResource("CapsuleShape2D_0xju8")
