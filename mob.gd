@@ -29,6 +29,7 @@ func leave_clump():
 	var angle = rng.randf_range(0.0, 6.2831853); # pick a rangle angle in radians
 	var offset = Vector2(0, 100).rotated(angle);
 	position = player.position + offset;
+	clump_index = -1; # 'unset' the index;
 	personality = Personalities.Neutral;
 	$CollisionShape2D.disabled = false;
 	show()
