@@ -138,6 +138,8 @@ func game_over():
 	for child in get_children():
 		if child is Mob || child is UnionBuster:
 			child.queue_free();
+	for child in player.get_node('Sprite2D').get_children():
+		child.queue_free();
 	start_level();
 
 func _on_level_timer_timeout():
