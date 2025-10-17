@@ -58,6 +58,10 @@ func _physics_process(delta: float) -> void:
 				var guy = clump[last];
 				$Sprite2D.get_child(last).queue_free();
 				guy.leave_clump()
+			var angle = position.angle_to(body.position)
+			velocity = direction * speed * -3; # x3 to make it move faster than normal speed, negative so it moves away instead of toward
+			move_and_slide()
+			
 			
 	var new_rotation = global_position.angle_to_point(global_position + velocity)
 	if new_rotation != $GuyAnchor.rotation:

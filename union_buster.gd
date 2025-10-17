@@ -14,7 +14,7 @@ func _ready():
 func _physics_process(delta):
 	var dist_from_player = position.distance_to(player.position);
 	var dist_from_origin = position.distance_to(origin);
-	if dist_from_origin < 1 && resetting:
+	if dist_from_origin < 0.5 && resetting:
 		resetting = false;
 		$CollisionShape2D.set_deferred('disabled', false);
 	if dist_from_player < 100 && dist_from_origin < 100 && !resetting:
