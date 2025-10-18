@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch85jao15nwnq"]
+
+[ext_resource type="Script" uid="uid://dy6wwt2ngfpta" path="res://friendly_powerup.gd" id="1_hdg30"]
+[ext_resource type="Texture2D" uid="uid://diaheyd2227li" path="res://ksru-logo-contract-custom-colors(1).png" id="1_k5jbr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hdg30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k5jbr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdg30"]
+radius = 25.555557
+height = 51.111115
+
+[node name="FriendlyPowerup" type="CharacterBody2D"]
+z_index = 5
+scale = Vector2(0.03, 0.03)
+script = ExtResource("1_hdg30")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6.1035156e-05, -1.5258789e-05)
+sprite_frames = SubResource("SpriteFrames_hdg30")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(30, 30)
+shape = SubResource("CapsuleShape2D_hdg30")

@@ -6,6 +6,7 @@ class_name Player;
 @export var clump: Array;
 var screen_size
 var mob_sprite;
+var all_friendly = false;
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO # The player's movement vector.
@@ -61,6 +62,8 @@ func _physics_process(delta: float) -> void:
 			var angle = position.angle_to(body.position)
 			velocity = direction * speed * -3; # x3 to make it move faster than normal speed, negative so it moves away instead of toward
 			move_and_slide()
+		elif body is FriendlyPowerup:
+			body.picked_up();
 			
 			
 	var new_rotation = global_position.angle_to_point(global_position + velocity)

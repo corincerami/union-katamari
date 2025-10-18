@@ -47,9 +47,14 @@ func _ready():
 	
 func _physics_process(delta):
 	var dist = position.distance_to(player.position);
-	if dist < 100 && personality != Personalities.Neutral:
+	var current_personality = personality
+	if player.all_friendly:
+		current_personality = Personalities.Positive
+	else:
+		current_personality = personality
+	if dist < 100 && current_personality != Personalities.Neutral:
 		velocity = position.direction_to(player.position) * speed * delta;
-		if personality == Personalities.Negative:
+		if current_personality == Personalities.Negative:
 			velocity *= -1;
 		move_and_slide();
 

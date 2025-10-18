@@ -2,6 +2,7 @@ extends Node2D
 
 @export var mob_scene: PackedScene
 @export var union_buster_scene: PackedScene
+@export var friendly_powerup_scene: PackedScene
 
 var start_position = Vector2(0, 300);
 var level_index = 1;
@@ -109,7 +110,11 @@ var union_busters = [
 	{"spawn": [0, 0]}
 ]
 
-var level_time = 30;
+var powerups = [
+	{"spawn": [450, 0]}
+]
+
+var level_time = 900;
 var player;
 
 func _ready():
@@ -132,6 +137,12 @@ func start_level():
 		var unique_ub = union_buster.duplicate();
 		unique_ub.origin = Vector2(ub_data.spawn[0], ub_data.spawn[1]);
 		add_child(unique_ub);
+	
+	var friendly_powerup = friendly_powerup_scene.instantiate();
+	for powerup_data in powerups:
+		var unique_powerup = friendly_powerup.duplicate();
+		unique_powerup.position = Vector2(powerup_data.spawn[0], powerup_data.spawn[1])
+		add_child(unique_powerup)
 	$LevelTimer.start();
 
 func game_over():
