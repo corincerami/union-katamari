@@ -1,8 +1,7 @@
 To Do
 - Make level art
 - Make character art
-- Generate level data
-- Track score/ranking
+- Create level layouts
 - Build UI and menus
 
 Feature Ideas
@@ -13,6 +12,7 @@ Feature Ideas
 - Powerups
   - Increased speed
   - Absorb all workers within a radius
+  - Make all workers friendly for a brief time
 - Multiple levels - each level could have a size goal and maybe a timer?
   - Unionize a single company
   - Unionize other companies in an industry
