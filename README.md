@@ -1,19 +1,17 @@
 To Do
+- Create wall object
+- Create level layouts
 - Make level art
 - Make character art
-- Create level layouts
 - Build UI and menus
+- Sound effects
+- Music
 
-Feature Ideas
-- Obstacles/Enemies - they can knock you around or remove workers from your union
-  - Union-busting lawyers
-  - Managers
-  - Propaganda
+Potential Feature Ideas
 - Powerups
   - Increased speed
   - Absorb all workers within a radius
-  - Make all workers friendly for a brief time
-- Multiple levels - each level could have a size goal and maybe a timer?
+- Multiple levels - each level could have a size goal and a timer?
   - Unionize a single company
   - Unionize other companies in an industry
   - Unionize the whole country
