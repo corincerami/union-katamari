@@ -114,7 +114,7 @@ var powerups = [
 	{"spawn": [450, 0]}
 ]
 
-var level_time = 900;
+var level_time = 30;
 var player;
 
 func _ready():
