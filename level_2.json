@@ -1,0 +1,9 @@
+{
+	"level_time":  5,
+	"start_position": [0, 300],
+	"mobs": [
+		{"spawn": [0, 0]}
+	],
+	"union_busters": [],
+	"powerups": []
+}

@@ -17,5 +17,4 @@ func picked_up():
 	$Timer.start()
 
 func _on_timer_timeout():
-	print_debug('foo')
 	player.all_friendly = false;

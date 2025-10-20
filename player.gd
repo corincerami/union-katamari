@@ -95,3 +95,8 @@ func _physics_process(delta: float) -> void:
 	
 func start(pos):
 	position = pos
+
+func reset_clump():
+	clump = []
+	for child in $Sprite2D.get_children():
+		child.queue_free()

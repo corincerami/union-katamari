@@ -10,7 +10,6 @@ func change_level(level_num: int):
 		remove_child(level)
 		level.call_deferred("free")
 
-	# Add the next level
+	# Start the level
 	var next_level = get_node('Level%s' % str(level_num));
-	add_child(next_level)
 	next_level.start_level();
