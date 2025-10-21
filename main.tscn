@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdxidng3i8gab"]
+[gd_scene load_steps=10 format=3 uid="uid://cdxidng3i8gab"]
 
 [ext_resource type="Script" uid="uid://dtgki8tfxk5hl" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://xrngm5dqbjuu" path="res://mob.tscn" id="2_1bvp3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dbwna85265c8h" path="res://union-katamari-office-dev-art.png" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b15lmrhiafsng" path="res://union_buster.tscn" id="4_5vw27"]
 [ext_resource type="PackedScene" uid="uid://ch85jao15nwnq" path="res://friendly_powerup.tscn" id="5_kek77"]
+[ext_resource type="PackedScene" uid="uid://dppckrgf27kwl" path="res://wall.tscn" id="6_5vw27"]
 
 [sub_resource type="GDScript" id="GDScript_272bh"]
 script/source = "extends Level
@@ -24,6 +25,7 @@ script = ExtResource("2_7mycd")
 mob_scene = ExtResource("2_1bvp3")
 union_buster_scene = ExtResource("4_5vw27")
 friendly_powerup_scene = ExtResource("5_kek77")
+wall_scene = ExtResource("6_5vw27")
 level_index = 1
 metadata/_custom_type_script = "uid://bttx8dun0h0p8"
 
@@ -48,6 +50,7 @@ script = SubResource("GDScript_272bh")
 mob_scene = ExtResource("2_1bvp3")
 union_buster_scene = ExtResource("4_5vw27")
 friendly_powerup_scene = ExtResource("5_kek77")
+wall_scene = ExtResource("6_5vw27")
 level_index = 2
 metadata/_custom_type_script = "uid://bttx8dun0h0p8"
 

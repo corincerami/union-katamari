@@ -94,5 +94,12 @@
 	],
 	"powerups": [
 		{"spawn": [450, 0]}
+	],
+	"walls": [
+		{"spawn": [-575, 0], "size": {"height": 640, "width": 10}, "sprite": "gray-square.png"},
+		{"spawn": [0, -320], "size": {"width": 1150, "height": 10}, "sprite": "gray-square.png"},
+		{"spawn": [575, 0], "size": {"height": 640, "width": 10}, "sprite": "gray-square.png"},
+		{"spawn": [0, 320], "size": {"width": 1150, "height": 10}, "sprite": "gray-square.png"},
+		{"spawn": [290, 150], "size": {"width": 210, "height": 55}, "sprite": "gray-square.png"},		
 	]
 }
