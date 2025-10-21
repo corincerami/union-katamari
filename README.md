@@ -1,5 +1,4 @@
 To Do
-- Create wall object
 - Create level layouts
 - Make level art
 - Make character art
@@ -16,4 +15,3 @@ Potential Feature Ideas
   - Unionize other companies in an industry
   - Unionize the whole country
 - Rankings - get a grade based on how many workers you attracted/maintained by the end of the level
-
