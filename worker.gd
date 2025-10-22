@@ -1,6 +1,6 @@
 extends CharacterBody2D;
 
-class_name Mob;
+class_name Worker;
 
 var player: Player;
 var clump_offset: Vector2;

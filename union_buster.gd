@@ -4,7 +4,7 @@ class_name UnionBuster
 
 var player: Player;
 var origin: Vector2;
-var speed = 7000;
+var speed = 9000;
 var resetting = false;
 
 func _ready():

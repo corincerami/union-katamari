@@ -14,7 +14,7 @@ enum Ratings {
 	F
 }
 
-var mobs: Array
+var workers: Array
 var union_busters: Array
 var powerups: Array
 var walls: Array
@@ -22,7 +22,7 @@ var walls: Array
 var level_time: int
 var start_position: Vector2
 
-@export var mob_scene: PackedScene
+@export var worker_scene: PackedScene
 @export var union_buster_scene: PackedScene
 @export var friendly_powerup_scene: PackedScene
 @export var wall_scene: PackedScene
@@ -33,7 +33,7 @@ func _ready():
 	var content = JSON.parse_string(file)
 	level_time = content.level_time
 	start_position = Vector2(content.start_position[0], content.start_position[1])
-	mobs = content.mobs
+	workers = content.workers
 	union_busters = content.union_busters
 	powerups = content.powerups
 	walls = content.walls
@@ -52,7 +52,7 @@ func start_level():
 
 func game_over():
 	for child in get_children():
-		if child is Mob || child is UnionBuster:
+		if child is Worker || child is UnionBuster:
 			child.queue_free();
 	start_level();
 
@@ -65,7 +65,7 @@ func _on_level_timer_timeout():
 		get_parent().change_level(level_index + 1);
 
 func _get_rating():
-	var total = mobs.size()
+	var total = workers.size()
 	var score = player.clump.size();
 	var percent = float(score) / total
 	if percent < 0.6:
@@ -82,13 +82,13 @@ func _get_rating():
 		return Ratings.S
 
 func create_workers():
-	var mob = mob_scene.instantiate();
-	for data in mobs:
-		var unique_mob = mob.duplicate();
+	var worker = worker_scene.instantiate();
+	for data in workers:
+		var unique_worker = worker.duplicate();
 		
-		unique_mob.position = Vector2(data.spawn[0], data.spawn[1]);
-		# Spawn the mob by adding it to the Main scene.
-		add_child(unique_mob)
+		unique_worker.position = Vector2(data.spawn[0], data.spawn[1]);
+		# Spawn the worker by adding it to the Main scene.
+		add_child(unique_worker)
 
 func create_union_busters():
 	var union_buster = union_buster_scene.instantiate();

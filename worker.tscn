@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://xrngm5dqbjuu"]
 
-[ext_resource type="Texture2D" uid="uid://bf4ew24ui8i1i" path="res://256x256.png" id="1_dy6sc"]
-[ext_resource type="Script" uid="uid://jlq3gkxqxksu" path="res://mob.gd" id="1_nokgg"]
+[ext_resource type="Script" uid="uid://jlq3gkxqxksu" path="res://worker.gd" id="1_8vnpx"]
+[ext_resource type="Texture2D" uid="uid://bf4ew24ui8i1i" path="res://256x256.png" id="2_7p3b1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nokgg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dy6sc")
+"texture": ExtResource("2_7p3b1")
 }],
 "loop": true,
 "name": &"walk",
@@ -16,9 +16,9 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ubaqv"]
 
-[node name="Mob" type="CharacterBody2D"]
+[node name="Worker" type="CharacterBody2D"]
 z_index = 1
-script = ExtResource("1_nokgg")
+script = ExtResource("1_8vnpx")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

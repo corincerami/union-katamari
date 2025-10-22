@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://b15tw7wsfoh7o"]
 
 [ext_resource type="Script" uid="uid://bttx8dun0h0p8" path="res://level.gd" id="1_u52ul"]
-[ext_resource type="PackedScene" uid="uid://cdxidng3i8gab" path="res://main.tscn" id="2_0b4ue"]
+[ext_resource type="PackedScene" uid="uid://xrngm5dqbjuu" path="res://worker.tscn" id="2_f2txt"]
 [ext_resource type="PackedScene" uid="uid://b15lmrhiafsng" path="res://union_buster.tscn" id="3_f2txt"]
 [ext_resource type="PackedScene" uid="uid://ch85jao15nwnq" path="res://friendly_powerup.tscn" id="4_1ainy"]
 [ext_resource type="PackedScene" uid="uid://dppckrgf27kwl" path="res://wall.tscn" id="5_f2txt"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_u52ul")
-mob_scene = ExtResource("2_0b4ue")
+worker_scene = ExtResource("2_f2txt")
 union_buster_scene = ExtResource("3_f2txt")
 friendly_powerup_scene = ExtResource("4_1ainy")
 wall_scene = ExtResource("5_f2txt")

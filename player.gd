@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	var last_collision = get_last_slide_collision()
 	if last_collision:
 		var body = last_collision.get_collider()
-		if body is Mob:
+		if body is Worker:
 			body.join_clump(clump.size())
 			var image = Image.load_from_file("res://256x256.png")
 			var texture = ImageTexture.create_from_image(image)
@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 				$Sprite2D.get_child(last).queue_free();
 				guy.leave_clump()
 			var angle = position.angle_to(body.position)
-			velocity = direction * speed * -3; # x3 to make it move faster than normal speed, negative so it moves away instead of toward
+			velocity = direction * speed * -4; # x3 to make it move faster than normal speed, negative so it moves away instead of toward
 			move_and_slide()
 		elif body is FriendlyPowerup:
 			body.picked_up();

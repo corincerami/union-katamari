@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdxidng3i8gab"]
+[gd_scene load_steps=10 format=3 uid="uid://cdxidng3i8gab"]
 
 [ext_resource type="Script" uid="uid://dtgki8tfxk5hl" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://bttx8dun0h0p8" path="res://level.gd" id="2_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dcvmltuy77nx1" path="res://player.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://xrngm5dqbjuu" path="res://worker.tscn" id="3_kek77"]
 [ext_resource type="PackedScene" uid="uid://b15lmrhiafsng" path="res://union_buster.tscn" id="4_5vw27"]
 [ext_resource type="PackedScene" uid="uid://ch85jao15nwnq" path="res://friendly_powerup.tscn" id="5_kek77"]
 [ext_resource type="PackedScene" uid="uid://dppckrgf27kwl" path="res://wall.tscn" id="6_5vw27"]
@@ -23,7 +22,6 @@ script = ExtResource("1_h2yge")
 
 [node name="Level1" type="Node2D" parent="."]
 script = ExtResource("2_7mycd")
-worker_scene = ExtResource("3_kek77")
 union_buster_scene = ExtResource("4_5vw27")
 friendly_powerup_scene = ExtResource("5_kek77")
 wall_scene = ExtResource("6_5vw27")
@@ -42,8 +40,8 @@ texture = ExtResource("7_5vw27")
 [node name="LevelTimer" type="Timer" parent="Level1"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Level1"]
-position = Vector2(-1067, -228.00002)
-scale = Vector2(-0.31136906, 0.32196087)
+position = Vector2(1000, -43)
+scale = Vector2(-0.31136906, 0.26133394)
 texture = ExtResource("8_kek77")
 
 [node name="Player" parent="." instance=ExtResource("3_h2yge")]
@@ -51,7 +49,6 @@ position = Vector2(750, 0)
 
 [node name="Level2" type="Node2D" parent="."]
 script = SubResource("GDScript_272bh")
-worker_scene = ExtResource("3_kek77")
 union_buster_scene = ExtResource("4_5vw27")
 friendly_powerup_scene = ExtResource("5_kek77")
 wall_scene = ExtResource("6_5vw27")
