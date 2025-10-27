@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdxidng3i8gab"]
+[gd_scene load_steps=12 format=3 uid="uid://cdxidng3i8gab"]
 
 [ext_resource type="Script" uid="uid://dtgki8tfxk5hl" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://bttx8dun0h0p8" path="res://level.gd" id="2_7mycd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dppckrgf27kwl" path="res://wall.tscn" id="6_5vw27"]
 [ext_resource type="Texture2D" uid="uid://c3exutbwk7pad" path="res://level-1-layout.png" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bjc0hrd8xvqqh" path="res://gray-square.png" id="8_kek77"]
+[ext_resource type="PackedScene" uid="uid://bd82v34qmcof4" path="res://ui.tscn" id="10_4c57u"]
 
 [sub_resource type="GDScript" id="GDScript_272bh"]
 script/source = "extends Level
@@ -70,3 +71,8 @@ texture = ExtResource("7_5vw27")
 [node name="LevelTimer" type="Timer" parent="Level2"]
 
 [node name="StartScreen" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("10_4c57u")]
+metadata/_edit_use_anchors_ = true

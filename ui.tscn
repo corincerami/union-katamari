@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd82v34qmcof4"]
+
+[ext_resource type="Script" uid="uid://dkd6lhgglsxtr" path="res://ui.gd" id="1_nltto"]
+[ext_resource type="Texture2D" uid="uid://g01u8ljp5alu" path="res://ui-bg.png" id="2_ibotj"]
+[ext_resource type="Texture2D" uid="uid://dyokroxt5jckv" path="res://ui-clock.png" id="3_n5ude"]
+[ext_resource type="Texture2D" uid="uid://bnx8e35md43oa" path="res://ui-clock-hand.png" id="4_y4yjw"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nltto")
+
+[node name="BG" type="Sprite2D" parent="."]
+texture = ExtResource("2_ibotj")
+centered = false
+
+[node name="Clock" type="Sprite2D" parent="."]
+position = Vector2(1060, 83)
+texture = ExtResource("3_n5ude")
+
+[node name="ClockPivot" type="Node2D" parent="Clock"]
+position = Vector2(-2, 13)
+
+[node name="ClockHand" type="Sprite2D" parent="Clock/ClockPivot"]
+position = Vector2(0, -29)
+texture = ExtResource("4_y4yjw")
+
+[node name="LevelTimer" type="Timer" parent="."]
